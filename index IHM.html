@@ -18,7 +18,7 @@
 					<nav>
 						<div class = "list-group">
 							<a href = "#" class = "list-group-item list-group-item-action"> Accueil </a>
-							<a href = "#" class = "list-group-item list-group-item-action"> Ajouter parking </a>
+							<a href = "#" class = "list-group-item list-group-item-action" data-toggle="modal" data-target="#addModal"> Ajouter parking </a>
 						</div>
 					</nav>
 				</div>
@@ -121,26 +121,57 @@
 		
 		<!-- Parties qui s'affichent en cliquant sur un lien -->
 		
-		<div class="modal" tabindex="-1" role="dialog">
+		<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
-				<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Ajouter un parking</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
 			  </div>
 			  <div class="modal-body">
-				<p>Modal body text goes here.</p>
+			  
+				<form>
+                <table id="modPark">
+                  <tr>
+                    <td><label>Nom du parking : </label></td>
+                    <td><input type="text" id="addNom"></td>
+                  </tr>
+                  <tr>
+                    <td><label>Type de véhicules : </label></td>
+                    <td>
+                      <input type="radio" id="addype1" name="addType" value="Auto" ><label for="newType1">Voiture</label>
+                      <input type="radio" id="addType2" name="addType" value="Vélo"><label for="newType2">Vélo</label>
+                      <input type="radio" id="addType3" name="addType" value="Auto et vélo"><label for="newType3">Voiture et vélo</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label>Coordonnées GPS : </label></td>
+                    <td><input type="text" id="addGPS"></td>
+                  </tr>
+                  <tr>
+                    <td><label>Nombre de places : </label></td>
+                    <td><input type="text" id="addPlace"></td>
+                  </tr>
+                  <tr>
+                    <td><label>Mail responsable : </label></td>
+                    <td><input type="text" id="addMail"></td>
+                  </tr>
+                  <tr>
+                    <td><label>Système de comptabe : </label></td>
+                    <td><input type="text" id="addCompt"></td>
+                  </tr>
+                </table>
+
+              </form>
 			  </div>
 			  <div class="modal-footer">
-				<button type="button" class="btn btn-primary">Ajouter parking</button>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addPark('addNom', 'addType', 'addGPS', 'addPlace', 'addMail', 'addCompt')">Ajouter parking</button>
 			  </div>
 			</div>
 		  </div>
-		</div>
-		
 		</div>
 		</div>
 		</div>
