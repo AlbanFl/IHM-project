@@ -1,0 +1,148 @@
+﻿	<!DOCTYPE html>
+	<html>
+		<head>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+			<script type="text/javascript" src="js/function.js"></script>
+			<meta charset="UTF-8" />
+		</head>
+		<body>
+			<div class = "container-fluid">
+				<div class = "row">
+				<div class = "col-md-2">
+					<h1> Park'u </h1>
+					<h4>La solution pour vous garer</h4>
+					
+					<nav>
+						<div class = "list-group">
+							<a href = "#" class = "list-group-item list-group-item-action"> Accueil </a>
+							<a href = "#" class = "list-group-item list-group-item-action"> Ajouter parking </a>
+						</div>
+					</nav>
+				</div>
+				
+			<div class = "col-md-10">
+			<div class="card-header">
+				<button class="btn btn-primary" type= "button" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true" aria-controls="collapseTable">
+					Liste des parkings
+				</button>
+			</div>
+			<div id="collapseTable" class="collapse show" aria-labelledby="headingOne">
+			<table class="table">
+				<thead class = "thead-dark">
+					<tr>
+						<th scope="col">Nom</th>
+						<th scope="col">Type de véhicules</th>
+						<th scope="col">Coordonnées GPS</th>
+						<th scope="col">Nombre de places</th>
+						<th scope="col">Email responsable</th>
+						<th scope="col">Système de comptage</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tr id = "INSA">
+					<td>INSA</td>
+					<td>Voitures</td>
+					<td>45.7806153, 4.877968399999986</td>
+					<td>29</td>
+					<td>bat.insa@outlook.com</td>
+					<td>Capteur</td>
+					<td><a href = "#">Modifier</a>
+					<a href ="#" onclick="delPark('INSA')"> Supprimer </a></td>
+				</tr>
+				<tr id = "Nautibus">
+					<td>Nautibus</td>
+					<td>Voitures et vélos</td>
+					<td>45.7806169, 4.877968399999948</td>
+					<td>58</td>
+					<td>bat.nautibus@gmail.com</td>
+					<td>Capteur</td>
+				</tr>
+				<tr id = "Grignard">
+					<td>Grignard</td>
+					<td>Voitures</td>
+					<td>45.7806131, 4.877968399999978</td>
+					<td>22</td>
+					<td>bat.grignard@hotmail.com</td>
+					<td>Comptage manuel</td>
+				</tr>
+				<tr  id = "CPE">
+					<td>CPE</td>
+					<td>Vélo</td>
+					<td>45.7806120, 4.877968399999945</td>
+					<td>2</td>
+					<td>bat.cpe@wanadoo.com</td>
+					<td>Comptage de l'espace</td>
+				</tr>
+				<tr id = "Deambu">
+					<td>Déambu</td>
+					<td>Voitures</td>
+					<td>45.7806122, 4.877968399999978</td>
+					<td>29</td>
+					<td>bat.demabu@orange.com</td>
+					<td>Capteur</td>
+				</tr>
+				<tr id = "Antonins">
+					<td>Antonins</td>
+					<td>Voitures</td>
+					<td>45.7806199, 4.877968399999999</td>
+					<td>56</td>
+					<td>bat.antonins@free.fr</td>
+					<td>Comptage manuel</td>
+				</tr>
+				<tr id = "IUT">
+					<td>IUT</td>
+					<td>Voitures et vélos</td>
+					<td>45.7806178, 4.877968399999900</td>
+					<td>152</td>
+					<td>bat.iut@bouygues.com</td>
+					<td>Comptage manuel</td>
+				</tr>
+				<tr id = "Themis">
+					<td>Thémis</td>
+					<td>Voitures</td>
+					<td>45.7806132, 4.877968399999904</td>
+					<td>52</td>
+					<td>bat.themis@sfr.com</td>
+					<td>Capteurs</td>
+				</tr>
+				<tr id = "Astree">
+					<td>Astrée</td>
+					<td>Voitures et vélos</td>
+					<td>45.7806151, 4.877968399999949</td>
+					<td>12</td>
+					<td>bat.astree@gouv.com</td>
+					<td>Comptage de l'espace</td>
+				</tr>
+			</table>
+		</div>
+		
+		<!-- Parties qui s'affichent en cliquant sur un lien -->
+		
+		<div class="modal" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-body">
+				<p>Modal body text goes here.</p>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-primary">Ajouter parking</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		</div>
+		</div>
+		</div>
+	</body>
+</html>
