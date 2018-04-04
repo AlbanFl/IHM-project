@@ -33,14 +33,13 @@
 			<div class = "col-md-4">
 				<form class="navbar-form navbar-right form-inline float-right">
 					<div class="form-group">
-						<input type="search" class="input-sm form-control" placeholder="Recherche">
-						<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+						<input type="search" id= "myInput" onkeyup="searchPark()" class="input-sm form-control" placeholder="Recherche">
 					</div>
 				</form>
 			</div>
 			</div>
-			<div id="collapseTable" class="collapse show" aria-labelledby="headingOne">
-			<table class="table" id = "parkList">
+			<div id="collapseTable" class="collapse show" aria-labelledby="headingOne" style="overflow-x:auto;">
+			<table class="table table-striped" id = "parkList">
 				<thead class = "thead-dark">
 					<tr>
 						<th scope="col">Nom</th>
@@ -59,7 +58,8 @@
 					<td>29</td>
 					<td>bat.insa@outlook.com</td>
 					<td>Capteur</td>
-					<td><a href = "#">Modifier </a>
+					<td><a href = "#" id="modif1" onclick="modPark(1)">Modifier </a>
+					<a href = "#" type="submit" id="save1" style="display:none" onclick="savePark('1')"> Sauvegarder </a>
 					<a href ="#" onclick="delPark('INSA')"> [x] </a></td>
 				</tr>
 				<tr id = "Nautibus">
@@ -69,7 +69,8 @@
 					<td>58</td>
 					<td>bat.nautibus@gmail.com</td>
 					<td>Capteur</td>
-					<td><a href = "#">Modifier </a>
+					<td><a href = "#" id="modif2" onclick="modPark('2')">Modifier </a> 
+					<a href = "#" id="save2" style="display:none" onclick="savePark('2')"> Sauvegarder </a>
 					<a href ="#" onclick="delPark('Nautibus')"> [x] </a></td>
 				</tr>
 				<tr id = "Grignard">
@@ -79,7 +80,8 @@
 					<td>22</td>
 					<td>bat.grignard@hotmail.com</td>
 					<td>Comptage manuel</td>
-					<td><a href = "#">Modifier </a>
+					<td><a href = "#" id="modif3" onclick="modPark('3')">Modifier </a>
+					<a href = "#" id="save3" style="display:none" onclick="savePark('3')"> Sauvegarder </a>
 					<a href ="#" onclick="delPark('Grignard')"> [x] </a></td>
 				</tr>
 				<tr  id = "CPE">
@@ -89,7 +91,8 @@
 					<td>2</td>
 					<td>bat.cpe@wanadoo.com</td>
 					<td>Comptage de l'espace</td>
-					<td><a href = "#">Modifier </a>
+					<td><a href = "#" id="modif4" onclick="modPark('4')">Modifier </a>
+					<a href = "#" id="save4" style="display:none" onclick="savePark('4')"> Sauvegarder </a>
 					<a href ="#" onclick="delPark('CPE')"> [x] </a></td>
 				</tr>
 				<tr id = "Deambu">
@@ -99,7 +102,8 @@
 					<td>29</td>
 					<td>bat.demabu@orange.com</td>
 					<td>Capteur</td>
-					<td><a href = "#">Modifier </a>
+					<td><a href = "#" id="modif5" onclick="modPark('5')">Modifier </a>
+					<a href = "#" id="save5" style="display:none" onclick="savePark('5')"> Sauvegarder </a>
 					<a href ="#" onclick="delPark('Deambu')"> [x] </a></td>
 				</tr>
 				<tr id = "Antonins">
@@ -109,7 +113,8 @@
 					<td>56</td>
 					<td>bat.antonins@free.fr</td>
 					<td>Comptage manuel</td>
-					<td><a href = "#">Modifier </a>
+					<td><a href = "#" id="modif6" onclick="modPark('6')">Modifier </a>
+					<a href = "#" id="save6" style="display:none" onclick="savePark('6')"> Sauvegarder </a>
 					<a href ="#" onclick="delPark('Antonins')"> [x] </a></td>
 				</tr>
 				<tr id = "IUT">
@@ -119,7 +124,8 @@
 					<td>152</td>
 					<td>bat.iut@bouygues.com</td>
 					<td>Comptage manuel</td>
-					<td><a href = "#">Modifier </a>
+					<td><a href = "#" id="modif7" onclick="modPark('7')">Modifier </a>
+					<a href = "#" id="save7" style="display:none" onclick="savePark(7')"> Sauvegarder </a>
 					<a href ="#" onclick="delPark('IUT')"> [x] </a></td>
 				</tr>
 				<tr id = "Themis">
@@ -129,7 +135,8 @@
 					<td>52</td>
 					<td>bat.themis@sfr.com</td>
 					<td>Capteurs</td>
-					<td><a href = "#">Modifier </a>
+					<td><a href = "#" id="modif8" onclick="modPark('8')">Modifier </a>
+					<a href = "#" id="save8" style="display:none" onclick="savePark('8')"> Sauvegarder </a>
 					<a href ="#" onclick="delPark('Themis')"> [x] </a></td>
 				</tr>
 				<tr id = "Astree">
@@ -139,7 +146,8 @@
 					<td>12</td>
 					<td>bat.astree@gouv.com</td>
 					<td>Comptage de l'espace</td>
-					<td><a href = "#">Modifier </a>
+					<td><a href = "#" id="modif9" onclick="modPark('9')">Modifier </a>
+					<a href = "#" id="save9" style="display:none" onclick="savePark('9')"> Sauvegarder </a>
 					<a href ="#" onclick="delPark('Astree')"> [x] </a></td>
 				</tr>
 			</table>
