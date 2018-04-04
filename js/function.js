@@ -66,4 +66,5 @@ function addPark(nom, type, gps, places, mail, comptage){
         park.appendChild(parkTdAction);
 
         document.getElementById('parkList').appendChild(park);
+		document.forms['formAdd'].reset();
 }

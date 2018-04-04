@@ -156,46 +156,46 @@
 				  <span aria-hidden="true">&times;</span>
 				</button>
 			  </div>
+			  <div class = "form-group">
+			  <form action = "JavaScript:addPark('addNom', 'addType', 'addGPS', 'addPlace', 'addMail', 'addCompt')" id="formAdd">
 			  <div class="modal-body">
-			  
-				<form>
                 <table id="modPark">
                   <tr>
-                    <td><label>Nom du parking : </label></td>
-                    <td><input type="text" id="addNom"></td>
+                    <td><label for = "addNom">Nom du parking : </label></td>
+                    <td><input type="text" id="addNom" class = "form-control" required></td>
                   </tr>
                   <tr>
                     <td><label>Type de véhicules : </label></td>
                     <td>
-                      <input type="radio" id="addype1" name="addType" value="Auto" ><label for="newType1"> Voiture</label>
+                      <input type="radio" id="addype1" name="addType" value="Auto" required><label for="newType1"> Voiture</label>
                       <input type="radio" id="addType2" name="addType" value="Vélo"><label for="newType2"> Vélo</label>
                       <input type="radio" id="addType3" name="addType" value="Auto et vélo"><label for="newType3"> Voiture et vélo</label>
                     </td>
                   </tr>
                   <tr>
-                    <td><label>Coordonnées GPS : </label></td>
-                    <td><input type="text" id="addGPS"></td>
+                    <td><label for = "addGPS">Coordonnées GPS : </label></td>
+                    <td><input type="text" id="addGPS" class = "form-control" required></td>
                   </tr>
                   <tr>
-                    <td><label>Nombre de places : </label></td>
-                    <td><input type="text" id="addPlace"></td>
+                    <td><label for = "addPlace">Nombre de places : </label></td>
+                    <td><input type="number" id="addPlace" class = "form-control" required></td>
                   </tr>
-                  <tr>
+                  <tr class = "form-group">
                     <td><label>Mail responsable : </label></td>
-                    <td><input type="text" id="addMail"></td>
+                    <td><input type="email" id="addMail" name="email_name" aria-describedby="email_help" class = "form-control" required></td>	
                   </tr>
                   <tr>
-                    <td><label>Système de comptage : </label></td>
-                    <td><input type="text" id="addCompt"></td>
+                    <td><label for = "addCompt">Système de comptage : </label></td>
+                    <td><input type="text" id="addCompt" class = "form-control" required></td>
                   </tr>
                 </table>
-
-              </form>
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-				<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addPark('addNom', 'addType', 'addGPS', 'addPlace', 'addMail', 'addCompt')">Ajouter parking</button>
+				<button type="submit" class="btn btn-primary">Ajouter parking</button>
 			  </div>
+			 </form>
+			 </div>
 			</div>
 		  </div>
 		</div>
