@@ -1,6 +1,8 @@
 function delPark(park){
+	if(confirm("Supprimer cette ligne?")){
         var item = document.getElementById(park);
         item.parentNode.removeChild(item);
+	}
 }
 
 function addPark(nom, type, gps, places, mail, comptage){

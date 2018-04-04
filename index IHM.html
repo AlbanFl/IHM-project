@@ -11,7 +11,7 @@
 		<body>
 			<div class = "container-fluid">
 				<div class = "row">
-				<div class = "col-md-2">
+				<div class = "col-md-2 bg-light">
 					<h1> Park'u </h1>
 					<h4>La solution pour vous garer</h4>
 					
@@ -24,10 +24,20 @@
 				</div>
 				
 			<div class = "col-md-10">
-			<div class="card-header">
+			<div class ="row card-header">
+			<div class="col-md-8">
 				<button class="btn btn-primary" type= "button" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true" aria-controls="collapseTable">
 					Liste des parkings
 				</button>
+			</div>
+			<div class = "col-md-4">
+				<form class="navbar-form navbar-right form-inline float-right">
+					<div class="form-group">
+						<input type="search" class="input-sm form-control" placeholder="Recherche">
+						<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+					</div>
+				</form>
+			</div>
 			</div>
 			<div id="collapseTable" class="collapse show" aria-labelledby="headingOne">
 			<table class="table" id = "parkList">
@@ -157,9 +167,9 @@
                   <tr>
                     <td><label>Type de véhicules : </label></td>
                     <td>
-                      <input type="radio" id="addype1" name="addType" value="Auto" ><label for="newType1">Voiture</label>
-                      <input type="radio" id="addType2" name="addType" value="Vélo"><label for="newType2">Vélo</label>
-                      <input type="radio" id="addType3" name="addType" value="Auto et vélo"><label for="newType3">Voiture et vélo</label>
+                      <input type="radio" id="addype1" name="addType" value="Auto" ><label for="newType1"> Voiture</label>
+                      <input type="radio" id="addType2" name="addType" value="Vélo"><label for="newType2"> Vélo</label>
+                      <input type="radio" id="addType3" name="addType" value="Auto et vélo"><label for="newType3"> Voiture et vélo</label>
                     </td>
                   </tr>
                   <tr>
@@ -175,7 +185,7 @@
                     <td><input type="text" id="addMail"></td>
                   </tr>
                   <tr>
-                    <td><label>Système de comptabe : </label></td>
+                    <td><label>Système de comptage : </label></td>
                     <td><input type="text" id="addCompt"></td>
                   </tr>
                 </table>
