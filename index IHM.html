@@ -2,44 +2,49 @@
 	<html>
 		<head>
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+			<link rel="stylesheet" href="css/styles.css">
 			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 			<script type="text/javascript" src="js/function.js"></script>
-			<meta charset="UTF-8" />
+			<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
 		</head>
 		<body>
-			<div class = "container-fluid">
-				<div class = "row">
-				<div class = "col-md-2 bg-light">
+		<div class ="row">
+			<div class = "col-md-12">
+				<div class = "header">
 					<h1> Park'u </h1>
-					<h4>La solution pour vous garer</h4>
-					
-					<nav>
-						<div class = "list-group">
-							<a href = "#" class = "list-group-item list-group-item-action"> Accueil </a>
-							<a href = "#" class = "list-group-item list-group-item-action" data-toggle="modal" data-target="#addModal"> Ajouter parking </a>
-						</div>
-					</nav>
+					<h4>La solution pour vous garer!</h4>
 				</div>
-				
-			<div class = "col-md-10">
-			<div class ="row card-header">
-			<div class="col-md-8">
-				<button class="btn btn-primary" type= "button" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true" aria-controls="collapseTable">
-					Liste des parkings
-				</button>
 			</div>
-			<div class = "col-md-4">
-				<form class="navbar-form navbar-right form-inline float-right">
-					<div class="form-group">
-						<input type="search" id= "myInput" onkeyup="searchPark()" class="input-sm form-control" placeholder="Recherche">
-					</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Menu</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">				
+					<a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true" aria-controls="collapseTable">Liste des parkings</a>	
+					</li>
+					<li class="nav-item active">
+						<a href = "#" class = "nav-link" data-toggle="modal" data-target="#addModal"> Ajouter parking </a>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input type="search" id= "myInput" onkeyup="searchPark()" class="input-sm form-control" placeholder="Recherche">
 				</form>
 			</div>
-			</div>
+		</nav>
+
+		<div class = "row card-body">
+			<div class=" col-md-12">
 			<div id="collapseTable" class="collapse show" aria-labelledby="headingOne" style="overflow-x:auto;">
-			<table class="table table-striped" id = "parkList">
+			<table class="table table-bordered table-condensed table-body-center" id = "parkList">
 				<thead class = "thead-dark">
 					<tr>
 						<th scope="col">Nom</th>
@@ -60,7 +65,7 @@
 					<td>Capteur</td>
 					<td><a href = "#" id="modif1" onclick="modPark(1)">Modifier </a>
 					<a href = "#" type="submit" id="save1" style="display:none" onclick="savePark('1')"> Sauvegarder </a>
-					<a href ="#" onclick="delPark('INSA')"> [x] </a></td>
+					<a href ="#" id = "suppr" onclick="delPark('INSA')"> [x] </a></td>
 				</tr>
 				<tr id = "Nautibus">
 					<td>Nautibus</td>
@@ -71,7 +76,7 @@
 					<td>Capteur</td>
 					<td><a href = "#" id="modif2" onclick="modPark('2')">Modifier </a> 
 					<a href = "#" id="save2" style="display:none" onclick="savePark('2')"> Sauvegarder </a>
-					<a href ="#" onclick="delPark('Nautibus')"> [x] </a></td>
+					<a href ="#" id = "suppr" onclick="delPark('Nautibus')"> [x] </a></td>
 				</tr>
 				<tr id = "Grignard">
 					<td>Grignard</td>
@@ -82,7 +87,7 @@
 					<td>Comptage manuel</td>
 					<td><a href = "#" id="modif3" onclick="modPark('3')">Modifier </a>
 					<a href = "#" id="save3" style="display:none" onclick="savePark('3')"> Sauvegarder </a>
-					<a href ="#" onclick="delPark('Grignard')"> [x] </a></td>
+					<a href ="#" id = "suppr" onclick="delPark('Grignard')"> [x] </a></td>
 				</tr>
 				<tr  id = "CPE">
 					<td>CPE</td>
@@ -93,7 +98,7 @@
 					<td>Comptage de l'espace</td>
 					<td><a href = "#" id="modif4" onclick="modPark('4')">Modifier </a>
 					<a href = "#" id="save4" style="display:none" onclick="savePark('4')"> Sauvegarder </a>
-					<a href ="#" onclick="delPark('CPE')"> [x] </a></td>
+					<a href ="#" id = "suppr" onclick="delPark('CPE')"> [x] </a></td>
 				</tr>
 				<tr id = "Deambu">
 					<td>Déambu</td>
@@ -104,7 +109,7 @@
 					<td>Capteur</td>
 					<td><a href = "#" id="modif5" onclick="modPark('5')">Modifier </a>
 					<a href = "#" id="save5" style="display:none" onclick="savePark('5')"> Sauvegarder </a>
-					<a href ="#" onclick="delPark('Deambu')"> [x] </a></td>
+					<a href ="#" id = "suppr" onclick="delPark('Deambu')"> [x] </a></td>
 				</tr>
 				<tr id = "Antonins">
 					<td>Antonins</td>
@@ -115,7 +120,7 @@
 					<td>Comptage manuel</td>
 					<td><a href = "#" id="modif6" onclick="modPark('6')">Modifier </a>
 					<a href = "#" id="save6" style="display:none" onclick="savePark('6')"> Sauvegarder </a>
-					<a href ="#" onclick="delPark('Antonins')"> [x] </a></td>
+					<a href ="#" id = "suppr" onclick="delPark('Antonins')"> [x] </a></td>
 				</tr>
 				<tr id = "IUT">
 					<td>IUT</td>
@@ -126,7 +131,7 @@
 					<td>Comptage manuel</td>
 					<td><a href = "#" id="modif7" onclick="modPark('7')">Modifier </a>
 					<a href = "#" id="save7" style="display:none" onclick="savePark(7')"> Sauvegarder </a>
-					<a href ="#" onclick="delPark('IUT')"> [x] </a></td>
+					<a href ="#" id = "suppr" onclick="delPark('IUT')"> [x] </a></td>
 				</tr>
 				<tr id = "Themis">
 					<td>Thémis</td>
@@ -137,7 +142,7 @@
 					<td>Capteurs</td>
 					<td><a href = "#" id="modif8" onclick="modPark('8')">Modifier </a>
 					<a href = "#" id="save8" style="display:none" onclick="savePark('8')"> Sauvegarder </a>
-					<a href ="#" onclick="delPark('Themis')"> [x] </a></td>
+					<a href ="#" id = "suppr" onclick="delPark('Themis')"> [x] </a></td>
 				</tr>
 				<tr id = "Astree">
 					<td>Astrée</td>
@@ -148,11 +153,12 @@
 					<td>Comptage de l'espace</td>
 					<td><a href = "#" id="modif9" onclick="modPark('9')">Modifier </a>
 					<a href = "#" id="save9" style="display:none" onclick="savePark('9')"> Sauvegarder </a>
-					<a href ="#" onclick="delPark('Astree')"> [x] </a></td>
+					<a href ="#" id = "suppr" onclick="delPark('Astree')"> [x] </a></td>
 				</tr>
 			</table>
 		</div>
-		
+		</div>
+
 		<!-- Parties qui s'affichent en cliquant sur un lien -->
 		
 		<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -167,7 +173,7 @@
 			  <div class = "form-group">
 			  <form action = "JavaScript:addPark('addNom', 'addType', 'addGPS', 'addPlace', 'addMail', 'addCompt')" id="formAdd">
 			  <div class="modal-body">
-                <table id="modPark">
+                <table id="addPark">
                   <tr>
                     <td><label for = "addNom">Nom du parking : </label></td>
                     <td><input type="text" id="addNom" class = "form-control" required></td>
@@ -175,7 +181,7 @@
                   <tr>
                     <td><label>Type de véhicules : </label></td>
                     <td>
-                      <input type="radio" id="addype1" name="addType" value="Auto" required><label for="newType1"> Voiture</label>
+                      <input type="radio" id="addType1" name="addType" value="Auto" required><label for="newType1"> Voiture</label>
                       <input type="radio" id="addType2" name="addType" value="Vélo"><label for="newType2"> Vélo</label>
                       <input type="radio" id="addType3" name="addType" value="Auto et vélo"><label for="newType3"> Voiture et vélo</label>
                     </td>
@@ -199,16 +205,76 @@
                 </table>
 			  </div>
 			  <div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-				<button type="submit" class="btn btn-primary">Ajouter parking</button>
+				<button type="button" class="btn btn-light" data-dismiss="modal">Fermer</button>
+				<button id = "ajouter type="submit" class="btn btn-dark">Ajouter parking</button>
 			  </div>
 			 </form>
 			 </div>
 			</div>
 		  </div>
 		</div>
+		
+				<div class="modal fade" id="modifModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Modifier un parking</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class = "form-group">
+			  <p style="display:none" id = "nb">0<p>
+			  <form action = "JavaScript:savePark(nb)" id="formModif">
+			  <div class="modal-body">
+                <table id="modifPark">
+                  <tr>
+                    <td><label for = "modifNom">Nom du parking : </label></td>
+                    <td><input type="text" id="modifNom" class = "form-control" required></td>
+                  </tr>
+                  <tr>
+                    <td><label>Type de véhicules : </label></td>
+                    <td>
+                      <input type="radio" id="modifType1" name="modifType" value="Auto" required><label for="newType1"> Voiture</label>
+                      <input type="radio" id="modifType2" name="modifType" value="Vélo"><label for="newType2"> Vélo</label>
+                      <input type="radio" id="modifType3" name="modifType" value="Auto et vélo"><label for="newType3"> Voiture et vélo</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for = "modifGPS">Coordonnées GPS : </label></td>
+                    <td><input type="text" id="modifGPS" class = "form-control" required></td>
+                  </tr>
+                  <tr>
+                    <td><label for = "modifPlace">Nombre de places : </label></td>
+                    <td><input type="number" id="modifPlace" class = "form-control" required></td>
+                  </tr>
+                  <tr class = "form-group">
+                    <td><label>Mail responsable : </label></td>
+                    <td><input type="email" id="modifMail" name="email_name" aria-describedby="email_help" class = "form-control" required></td>	
+                  </tr>
+                  <tr>
+                    <td><label for = "modifCompt">Système de comptage : </label></td>
+                    <td><input type="text" id="modifCompt" class = "form-control" required></td>
+                  </tr>
+                </table>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-light" data-dismiss="modal">Fermer</button>
+				<button type="submit" class="btn btn-dark" >Modifier parking</button>
+			  </div>
+			 </form>
+			 </div>
+			</div>
+		  </div>
 		</div>
+		
 		</div>
+		<footer>
+		<div class="footer col-md-12" >
+			<img src = 'css/foot-icon.png' color = 'white'>
+			<p>Mesdames et Messieurs, voici un pied de page!</p>
+			
 		</div>
-	</body>
+		</footer>
+		</body>
 </html>
