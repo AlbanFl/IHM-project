@@ -29,3 +29,9 @@
 #suppr {
 	color:red;
 }
+
+@media screen and (min-width : 992px){
+.navbar-brand{
+	display:none;
+}
+}
